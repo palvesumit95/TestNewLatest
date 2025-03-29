@@ -11,24 +11,23 @@ import com.base.BaseClass;
 
 public class DriverUtils extends BaseClass {
 
-public static String getScreenshot(String name) {
-		
-		TakesScreenshot ts = (TakesScreenshot)driver;
-		
+	public static String getScreenshot(String name) {
+
+		TakesScreenshot ts = (TakesScreenshot) driver;
+
 		File src = ts.getScreenshotAs(OutputType.FILE);
-		
-		String path = System.getProperty("user.dir")+"/screenshots/"+name+".jpg";
+
+		String path = System.getProperty("user.dir") + "/screenshots/" + name + ".jpg";
 		File dest = new File(path);
-		
+
 		try {
 			FileUtils.copyFile(src, dest);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		return path;
-		
+
 	}
-	
+
 }
