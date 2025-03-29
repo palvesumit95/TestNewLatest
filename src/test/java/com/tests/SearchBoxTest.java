@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 
 import com.base.BaseClass;
 import com.pages.SearchBox;
+import com.utilities.PropertiesUtils;
 
 public class SearchBoxTest extends BaseClass {
 
@@ -23,9 +24,9 @@ public class SearchBoxTest extends BaseClass {
 	}
 
 	@Test
-	public void seachBoxTestEx() {
+	public void seachBoxTestEx() throws IOException {
 		sb = new SearchBox(driver);
-		sb.searchBoxEle.sendKeys("89898");
+		sb.searchBoxEle.sendKeys(PropertiesUtils.readProperty("Product"));
 	}
 	
 	@AfterSuite
