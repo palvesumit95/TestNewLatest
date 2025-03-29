@@ -12,6 +12,9 @@ public class SearchBox extends BaseClass {
 	
 	@FindBy(xpath="//input[@type='text']")
 	public WebElement searchBoxEle;
+	
+	@FindBy(xpath="//input[@id='nav-search-submit-button']")
+	public WebElement searchButton;
 
 	public SearchBox(WebDriver driver) {
 		PageFactory.initElements(driver, this);

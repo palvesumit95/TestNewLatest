@@ -24,9 +24,13 @@ public class SearchBoxTest extends BaseClass {
 	}
 
 	@Test
-	public void seachBoxTestEx() throws IOException {
+	public void seachBoxTestEx() throws IOException, InterruptedException {
 		sb = new SearchBox(driver);
-		sb.searchBoxEle.sendKeys(PropertiesUtils.readProperty("Product"));
+		String product = PropertiesUtils.readProperty("product");
+		System.out.println(product);
+		sb.searchBoxEle.sendKeys(product);
+		sb.searchButton.click();
+		Thread.sleep(5000);
 	}
 	
 	@AfterSuite
